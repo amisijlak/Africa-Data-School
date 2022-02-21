@@ -162,14 +162,14 @@ app.layout = html.Div(children=[
         Input(component_id='time', component_property='value')
     ]
 )
-def update_content(currency, time_change, apikey=apikey):
+def update_content(currency, time_change):
     """This Function fetches the data from Coin API and returns the price_close,
     price_high, price_open, volume traded and the graph.
     """
     url = f'https://rest.coinapi.io/v1/ohlcv/{currency}/USD/latest?period_id={time_change}'
     headers = {'X-CoinAPI-Key': apikey}
     response = requests.get(url, headers=headers)
-    data = json.loads(response.text)
+    data = response.json()
 
     df = pd.DataFrame(data)
     # Price Open
@@ -201,4 +201,4 @@ def update_content(currency, time_change, apikey=apikey):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True, port=806)
+    app.run_server()
