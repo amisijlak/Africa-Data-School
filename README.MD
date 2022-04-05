@@ -1,2 +1,2 @@
-# Africa Data School Nov 2021 Cohort.
-This is the the source code for Africa Data School Nov 2021 Cohort.
+# Africa Data School Jan 2022 Cohort.
+This is the the source code for Africa Data School Jan 2022 Cohort.
